@@ -2,7 +2,7 @@
 
 === About ===
 
-Login to LodeStar to see who's in space and where the International Space Station is currently located while it travels at a speed of 28,000 km/h. 
+  Who's currently in space? What spacecraft are they on? Want to check out where the ISS is currently located? Sign in to LodeStar to find out! 
 
 === Live Site ===
 
