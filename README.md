@@ -1,3 +1,31 @@
+# LodeStar 
+
+=== About ===
+
+Login to LodeStar to see who's in space and where the International Space Station is currently located while it travels at a speed of 28,000 km/h.  
+
+=== Technologies ===
+
+* React.js
+* Node.js
+* Express.js
+* React Bootstrap
+* Auth0 or react-google-login 
+* Open Notify API 
+* Leaflet 
+
+=== Setup ===
+
+(Coming Soon)
+
+=== Wireframes ===
+
+https://support.mockflow.com/article/108-how-to-share-projects-in-mockflow
+
+=== User Stories ===
+
+(Coming Soon)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
