@@ -2,17 +2,22 @@
 
 === About ===
 
-Login to LodeStar to see who's in space and where the International Space Station is currently located while it travels at a speed of 28,000 km/h.  
+Login to LodeStar to see who's in space and where the International Space Station is currently located while it travels at a speed of 28,000 km/h. 
+
+=== Live Site ===
+
+(Coming Soon)
 
 === Technologies ===
 
-* React.js
+* ReactJS
 * Node.js
-* Express.js
-* React Bootstrap
-* Auth0 or react-google-login 
+* Firebase 
+* React Router
 * Open Notify API 
 * Leaflet 
+* Netlify
+* React Bootstrap
 
 === Setup ===
 
