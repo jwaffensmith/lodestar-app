@@ -7,6 +7,7 @@ import {
 import Astronauts from './components/astronauts/Astronauts';
 import ISS from './components/ISS/ISS';
 import Profile from './components/profile/Profile';
+import AstronautContainer from './components/astronauts/AstronautContainer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/ISS" component={ ISS } />
         <Route path="/profile" component={ Profile } />
       </Switch>
+      <AstronautContainer/>
     </div>
   );
 }
