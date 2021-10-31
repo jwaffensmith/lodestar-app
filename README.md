@@ -2,7 +2,7 @@
 
 === About ===
 
-  Who's currently in space? What spacecraft are they on? Want to check out where the ISS is currently located? Sign in to LodeStar to find out! 
+  Who's currently in space and what spacecraft are they on? Want to check out where the ISS is currently located? Sign in to LodeStar to find out! 
 
 === Live Site ===
 
