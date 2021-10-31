@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
+import Table from 'react-bootstrap/Table'
 
 
 class Astronauts extends Component {
+
+    renderData = (renderData, index) => {
+        return (
+            <tr key={index}>
+                <td>{this.props.data[index].name}</td>
+                <td>{this.props.data[index].craft}</td>
+            </tr>
+        )
+    }
 
     render () {
         
@@ -14,10 +24,19 @@ class Astronauts extends Component {
         }
 
         return (
-            <div>
-                <div>{this.props.data[0].craft}</div>
-                <div>{this.props.data[0].name}</div> 
-            </div>
+        <>
+            <Table striped bordered hover variant="dark">
+                <thead>
+                    <tr>
+                        <th>Astronaut</th>
+                        <th>Spacecraft</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.props.data.map(this.renderData)}
+                </tbody>
+            </Table>
+        </>
         )
     }
 }
