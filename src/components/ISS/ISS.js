@@ -8,14 +8,14 @@ class Iss extends Component {
             return <div>loading...</div>;
         }
 
-        if (!this.props.IssData) {
+        if (!this.props.issData) {
             return <div></div>;
         }
 
         return (
             <div>
-                <div>{this.props.IssData[0].iss_position.latitude}</div>
-                <div>{this.props.IssData[0].iss_position.longitude}</div> 
+                <div>{this.props.issData[0].iss_position.latitude}</div>
+                <div>{this.props.issData[0].iss_position.longitude}</div> 
             </div>
         )
     }
