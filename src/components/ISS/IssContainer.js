@@ -1,6 +1,8 @@
 import React, {  Component } from "react";
 import Iss from "./Iss";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import L from "leaflet"
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+
 
 class IssContainer extends Component {
 
@@ -19,6 +21,13 @@ class IssContainer extends Component {
         this.setState({ issData: [data], loading: false });
     }
 
+    getIcon() {
+        return L.icon ( {
+            iconUrl: "../../assets/iss1.png",
+            iconSize: 100,
+        })
+    }
+
     render() {
 
         if (this.state.loading) {
@@ -32,15 +41,12 @@ class IssContainer extends Component {
         return (
             <>
             <div id="map">
-                <MapContainer center={[this.state.issData[0].iss_position.latitude, this.state.issData[0].iss_position.longitude]} zoom={1} scrollWheelZoom={true}>
+                <MapContainer center={[this.state.issData[0].iss_position.latitude, this.state.issData[0].iss_position.longitude]} zoom={2} scrollWheelZoom={true}>
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={[this.state.issData[0].iss_position.latitude, this.state.issData[0].iss_position.longitude]}>
-                        <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
+                    <Marker position={[this.state.issData[0].iss_position.latitude, this.state.issData[0].iss_position.longitude]} icon={ this.getIcon() }>
                     </Marker>
                 </MapContainer>
                 <Iss loading={this.state.loading} issData={this.state.issData}/>
