@@ -7,13 +7,16 @@ class AstronautContainer extends Component {
         astronautData: [],
     };
 
+    // fetch astronaut json data from api
     async componentDidMount() {
         const url = "http://api.open-notify.org/astros.json";
         const response = await fetch(url);
         const data = await response.json();
+        // set state of data to people property
         this.setState({ astronautData: data.people, loading: false });
     }
 
+    //pass astronaut data and loading state to Astronauts component
     render() {
        
         return (
