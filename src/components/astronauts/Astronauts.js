@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Table from 'react-bootstrap/Table'
 
-
 class Astronauts extends Component {
 
+    // function to render astronaut names and spacecrafts in table
     renderData = (renderData, index) => {
         return (
             <tr key={index}>
@@ -15,10 +15,12 @@ class Astronauts extends Component {
 
     render () {
         
+        // if loading is true, render div
         if (this.props.loading) {
             return <div>loading...</div>;
         }
 
+        // prevents error if api fetch takes time to load
         if (!this.props.data) {
             return <div></div>;
         }
