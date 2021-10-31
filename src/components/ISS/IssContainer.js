@@ -21,19 +21,22 @@ class IssContainer extends Component {
         this.setState({ issData: [data], loading: false });
     }
 
+    // function to set custom map marker
     getIcon() {
         return L.icon ( {
-            iconUrl: "../../assets/iss1.png",
+            iconUrl: "../../assets/iss.png",
             iconSize: 100,
         })
     }
 
     render() {
-
+        
+        // if loading is true, render div
         if (this.state.loading) {
             return <div>loading...</div>;
         }
 
+        // prevents error if api fetch takes time to load
         if (!this.state.issData) {
             return <div></div>;
         }

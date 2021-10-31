@@ -7,8 +7,13 @@ class AstronautContainer extends Component {
         astronautData: [],
     };
 
-    // fetch astronaut json data from api
-    async componentDidMount() {
+    // call on fetchData function
+    componentDidMount() {
+        this.fetchData()
+    }
+
+    // fetch astronaut data from api
+    async fetchData() {
         const url = "http://api.open-notify.org/astros.json";
         const response = await fetch(url);
         const data = await response.json();
