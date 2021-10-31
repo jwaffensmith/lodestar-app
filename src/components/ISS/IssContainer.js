@@ -16,9 +16,9 @@ class IssContainer extends Component {
 
     render() {
         return (
-        <div>
-            <Iss loading={this.state.loading} IssData={this.state.IssData}/>
-        </div>
+            <div id="map">
+                <Iss loading={this.state.loading} IssData={this.state.IssData}/>
+            </div>
         );
     }
 }
