@@ -2,10 +2,10 @@ import {
     signInWithPopup, 
     GoogleAuthProvider, 
     onAuthStateChanged, 
-    signOut 
 } from "firebase/auth";
 import { useState } from "react";
 import  { auth }  from "./Firebase";
+import { Button, Card } from "react-bootstrap"
 
 function Login () {
 
@@ -21,35 +21,21 @@ function Login () {
 
         signInWithPopup(auth, provider)
             .then((result) => {
-                // // This gives you a Google Access Token. You can use it to access the Google API.
-                // const credential = GoogleAuthProvider.credentialFromResult(result);
-                // const token = credential.accessToken;
-                // // The signed-in user info.
-                // const user = result.user;
-                console.log(result)
-                // ...
+                console.log(auth)
             }).catch((error) => {
-                // // Handle Errors here.
-                // const errorCode = error.code;
-                // const errorMessage = error.message;
-                // // The email of the user's account used.
-                // const email = error.email;
-                // // The AuthCredential type that was used.
-                // const credential = GoogleAuthProvider.credentialFromError(error);
-                // // ...
-                console.log(error)
             });
     }
 
-    const logout = async () => {
-        await signOut(auth);
-    };
-
     return (
         <>
-        <h4>Greetings, {user?.displayName}!</h4>
-        <button onClick={logout}>logout</button>
-        <button onClick={signInWithFirebase}>Log In with Google</button>
+            <Card>
+                <Card.Body>
+                    <h2 className="text-center mb-4">Greetings!</h2>
+                    <Button onClick={signInWithFirebase} className="justify-content-center w-30" >
+                    Log In with Google
+                    </Button>
+                </Card.Body>
+            </Card>
         </>
     )
 };
