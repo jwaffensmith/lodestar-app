@@ -1,6 +1,7 @@
 import  Nav from 'react-bootstrap/Nav'
 import  Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
+import  { auth }  from "../auth/Firebase";
 
 const Navigation = () => {
     return (
@@ -24,6 +25,7 @@ const Navigation = () => {
             <Nav.Link href="/profile">Profile</Nav.Link>
             <Nav.Link href="/astronauts">Astronauts</Nav.Link>
             <Nav.Link href="/iss">ISS Location</Nav.Link>
+            <Nav.Link href="/logout">Log Out</Nav.Link>
         </Nav>
         </>
     )
