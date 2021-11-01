@@ -12,6 +12,7 @@ import Navigation from './components/shared/Navigation';
 import Login from './components/auth/Login';
 import AuthContext from './components/auth/AuthContext';
 import firebase from './components/auth/Firebase';
+import PrivateRoute from './components/auth/PrivateRoute';
 
 
 // add private route
@@ -54,6 +55,7 @@ function App() {
             <Route path="/iss" component={ IssContainer } />
             <Route path="/profile" component={ Profile } />
             <Route path="/login" component={ Login }/>
+            <Route path="*" component={() => "404 NOT FOUND"} />
             <Redirect from="/" to="/login"/>
             <Redirect from="/logout" to="/login"/>
           </Switch>
