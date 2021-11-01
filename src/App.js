@@ -64,6 +64,7 @@ function App() {
               <Redirect from="/logout" to="/login"/>
               <Redirect from="/" to="/login"/>
           </Switch>
+          <Footer/>
         </AuthContext.Provider>
     </div>
     );
