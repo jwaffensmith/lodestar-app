@@ -6,13 +6,14 @@ import {
 } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Profile from './components/profile/Profile';
-import AstronautContainer from './components/astronauts/AstronautContainer';
-import IssContainer from './components/iss/IssContainer';
+// import AstronautContainer from './components/astronauts/AstronautContainer';
+import Iss from './components/iss/Iss';
 import Navigation from './components/shared/Navigation';
 import Login from './components/auth/Login';
 import AuthContext from './components/auth/AuthContext';
 import firebase from './components/auth/Firebase';
 import PrivateRoute from './components/auth/PrivateRoute';
+import Astronaut from './components/astronauts/Astronaut';
 
 
 // add private route
@@ -42,6 +43,7 @@ function App() {
     setUser(null);
   };
 
+
   return (
     <div>
         <AuthContext.Provider 
@@ -51,13 +53,13 @@ function App() {
         }}>
           <Navigation/>
           <Switch>
-            <Route path="/astronauts" component={ AstronautContainer } />
-            <Route path="/iss" component={ IssContainer } />
-            <Route path="/profile" component={ Profile } />
-            <Route path="/login" component={ Login }/>
-            <Route path="*" component={() => "404 NOT FOUND"} />
-            <Redirect from="/" to="/login"/>
-            <Redirect from="/logout" to="/login"/>
+
+              <Route path="/astronauts" component={ Astronaut } />
+              <Route path="/iss" component={ Iss } />
+              <Route path="/profile" component={ Profile } />
+              <Route path="/login" component={ Login }/>
+              <Redirect from="/logout" to="/login"/>
+              <Redirect from="/" to="/login"/>
           </Switch>
         </AuthContext.Provider>
     </div>
@@ -65,3 +67,4 @@ function App() {
 }
 
 export default App;
+{/* <Redirect to="/login" component={ Login }/> */}
