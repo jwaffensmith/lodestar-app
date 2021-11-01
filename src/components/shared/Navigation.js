@@ -1,15 +1,13 @@
 import  Nav from 'react-bootstrap/Nav'
 import  Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
-import  { auth }  from "../auth/Firebase";
-import {  signOut } from "firebase/auth";
+import AuthContext from '../auth/AuthContext';
+import { React, useContext } from 'react';
 
 const Navigation = () => {
 
-    const logout = async () => {
-        await signOut(auth);
-    };
-
+    const { logout } = useContext(AuthContext);
+    
     return (
         <>
         <Nav className="justify-content-center app-name" activeKey="/">
@@ -31,7 +29,7 @@ const Navigation = () => {
             <Nav.Link href="/astronauts">Astronauts</Nav.Link>
             <Nav.Link href="/iss">ISS Location</Nav.Link>
             <Nav.Link href="/profile">Profile</Nav.Link>
-            <Nav.Link onClick={logout} href="/login">Sign Out </Nav.Link>
+            <Nav.Link href="/login" onClick={logout}>Sign Out </Nav.Link>
         </Nav>
         </>
     )
