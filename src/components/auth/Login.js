@@ -31,7 +31,7 @@ function Login () {
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Greetings!</h2>
-                    <Button onClick={signInWithFirebase} className="justify-content-center w-30" >
+                    <Button onClick={signInWithFirebase} className="text-center mb-4 w-30" >
                     Log In with Google
                     </Button>
                 </Card.Body>

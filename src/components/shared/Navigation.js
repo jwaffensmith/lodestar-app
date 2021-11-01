@@ -2,7 +2,6 @@ import  Nav from 'react-bootstrap/Nav'
 import  Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import  { auth }  from "../auth/Firebase";
-import { Button } from "react-bootstrap"
 import {  signOut } from "firebase/auth";
 
 const Navigation = () => {
@@ -29,12 +28,10 @@ const Navigation = () => {
         </Nav>
         {/* add conditional once auth is implemented */}
         <Nav defaultActiveKey="/" className="flex-column">
-            <Nav.Link href="/profile">Profile</Nav.Link>
             <Nav.Link href="/astronauts">Astronauts</Nav.Link>
             <Nav.Link href="/iss">ISS Location</Nav.Link>
-            <Button onClick={logout} href="/login">
-                Sign Out
-            </Button>
+            <Nav.Link href="/profile">Profile</Nav.Link>
+            <Nav.Link onClick={logout} href="/login">Sign Out </Nav.Link>
         </Nav>
         </>
     )
