@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Profile from './components/profile/Profile';
-// import AstronautContainer from './components/astronauts/AstronautContainer';
 import Iss from './components/iss/Iss';
 import Navigation from './components/shared/Navigation';
 import Login from './components/auth/Login';
@@ -14,6 +13,7 @@ import AuthContext from './components/auth/AuthContext';
 import firebase from './components/auth/Firebase';
 import PrivateRoute from './components/auth/PrivateRoute';
 import Astronaut from './components/astronauts/Astronaut';
+import PageNotFound from './components/shared/PageNotFound';
 
 
 // add private route
@@ -21,6 +21,7 @@ import Astronaut from './components/astronauts/Astronaut';
 function App() {
 
   const [user, setUser] = useState(null);
+  const [isAuth, setIsAuth] = useState(false);
 
   // set current user 
   useEffect(() => {
@@ -28,10 +29,12 @@ function App() {
         if (user) {
           // user is logged in
           setUser(user);
+          setIsAuth(true);
           console.log(user);
         } else {
           // user is logged out
           setUser(null)
+          setIsAuth(false)
         }
     })
   }, []);
@@ -43,21 +46,21 @@ function App() {
     setUser(null);
   };
 
-
   return (
     <div>
         <AuthContext.Provider 
         value={{
           ...user,
+          ...isAuth,
           logout
         }}>
           <Navigation/>
           <Switch>
-
-              <Route path="/astronauts" component={ Astronaut } />
-              <Route path="/iss" component={ Iss } />
-              <Route path="/profile" component={ Profile } />
+              <PrivateRoute path="/profile" component={ Profile } isAuth={isAuth}/>
+              <PrivateRoute path="/astronauts" component={ Astronaut } isAuth={isAuth}/>
+              <PrivateRoute path="/iss" component={ Iss } isAuth={isAuth} />
               <Route path="/login" component={ Login }/>
+              <Route component={ PageNotFound }/>
               <Redirect from="/logout" to="/login"/>
               <Redirect from="/" to="/login"/>
           </Switch>
