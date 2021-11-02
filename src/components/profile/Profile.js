@@ -1,6 +1,8 @@
 import AuthContext from '../auth/AuthContext';
-import { React, useContext } from 'react';
-import { Container, Card, Button, Image } from "react-bootstrap";
+import React, { useContext } from 'react';
+import { Container } from "react-bootstrap/Container";
+import { Card } from "react-bootstrap/Card";
+import { Button } from "react-bootstrap/Button";
 
 
 function Profile () {
