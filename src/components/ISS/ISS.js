@@ -59,6 +59,7 @@ function Iss() {
             return (
             <>
                 <div id="map">
+                    <h2 className="header">Current Location of ISS</h2>
                     <Container className="d-flex align-items-center justify-content-center mt-5">
                         <MapContainer center={[issData[0].iss_position.latitude, issData[0].iss_position.longitude]} zoom={2} scrollWheelZoom={true}>
                             <TileLayer

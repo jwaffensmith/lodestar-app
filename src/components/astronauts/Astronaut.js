@@ -52,8 +52,9 @@ function Astronaut() {
         } else if  (astronautData) {
             return (
                 <>
+                <h2 className="header">Astronauts Currently in Space</h2>
                 <Container className="d-flex align-items-center justify-content-center">
-                    <Table striped bordered hover variant="dark" className="table">
+                    <Table striped bordered hover variant="dark" className="table" responsive="sm" responsive="md">
                         <thead className="table-header">
                             <tr>
                                 <th>Astronaut</th>
