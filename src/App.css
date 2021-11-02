@@ -68,8 +68,13 @@ body {
   color: var(--navbar-font);
 }
 
+.card {
+  border: var(--background);
+}
+
 .profile-cards {
   margin: 2rem;
+  background: linear-gradient(#1d2c41, #c4c8d4);
 }
 
 /* Iss page */
