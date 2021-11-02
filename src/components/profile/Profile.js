@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import  Container  from "react-bootstrap/Container";
 import Card  from "react-bootstrap/Card";
 import  Button from "react-bootstrap/Button"
+import {Animated} from "react-animated-css";
 
 function Profile () {
 
@@ -16,14 +17,18 @@ function Profile () {
                 <h2 className="text-center mb-4 profile-header">Greetings, {displayName}!</h2>
             </Container>
             <Container className="d-flex align-items-center justify-content-center">
-                <Card style={{ width: '18rem'}} className="text-center profile-cards">
-                    <Card.Img variant="top" src="../../assets/astronaut.png"  />
+                <Card style={{ width: '20rem'}} className="text-center profile-cards">
+                    <Animated animationIn="swing" animationInDuration="10000" isVisible={true}>
+                        <Card.Img variant="top" src="../../assets/astronaut.png" className="card-img"/>
+                    </Animated>
                     <Card.Body>
                         <Button  style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }} href="/astronauts" className="profile-button">Who's in Space?</Button>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '18rem' }} className="text-center profile-cards">
-                    <Card.Img variant="top" src="../../assets/iss2.png" />
+                <Card style={{ width: '20rem' }} className="text-center profile-cards">
+                    <Animated animationIn="swing" animationInDuration="10000"  isVisible={true}>
+                        <Card.Img variant="top" src="../../assets/iss2.png" className="card-img"/>
+                    </Animated>
                     <Card.Body>
                         <Button style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }}  href="/iss" className="profile-button">Where is the ISS?</Button>
                     </Card.Body>

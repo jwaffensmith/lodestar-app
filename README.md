@@ -21,6 +21,7 @@ Will need to find new API source for production.
 * Open Notify API 
 * Leaflet 
 * React Bootstrap
+* react-animated-css
 * Netlify
 
 === Setup ===

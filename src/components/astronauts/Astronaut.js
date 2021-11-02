@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext, useState, useEffect, } from 'react';
 import Table from 'react-bootstrap/Table'
-import Container from 'react-bootstrap/Container'
 import AuthContext from '../auth/AuthContext';
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
@@ -18,7 +17,6 @@ function Astronaut() {
         .then(response => {
         setAstronautData(response.people);
         setIsLoading(false);
-        console.log(response.people)
         });
     }, []);
 
@@ -28,18 +26,16 @@ function Astronaut() {
         if (isLoading === true) {
             return (
                 <>
-                <Container className="d-flex align-items-center justify-content-center mt-5">
-                    <Button variant="secondary" disabled>
-                        <Spinner
-                        as="span"
-                        animation="grow"
-                        size="xxl"
-                        role="status"
-                        aria-hidden="true"
-                        />
-                        Loading... If viewing on https://lodestar-app.netlify.app, browser will block API fetch because it's an unsecure site :(
-                    </Button>
-                </Container>
+                <div className="d-flex align-items-center justify-content-center mt-5">
+                    <Spinner
+                    as="span"
+                    animation="grow"
+                    size="xxl"
+                    role="status"
+                    aria-hidden="true"
+                    />
+                    Loading... If viewing on https://lodestar-app.netlify.app, browser will block API fetch because it's an unsecure site :(
+                </div>
                 </>
             );
         }
@@ -52,26 +48,27 @@ function Astronaut() {
         } else if  (astronautData) {
             return (
                 <>
-                <h2 className="header">Astronauts Currently in Space</h2>
-                <Container className="d-flex align-items-center justify-content-center">
-                    <Table striped bordered hover variant="dark" className="table" responsive="sm" responsive="md">
-                        <thead className="table-header">
-                            <tr>
-                                <th>Astronaut</th>
-                                <th>Spacecraft</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {astronautData &&
-                            astronautData.map((index) => (
-                                <tr key={index}>
-                                    <td className="table-data">{index.name}</td>
-                                    <td className="table-data">{index.craft}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </Table>
-                </Container>
+                <section>
+                    <h2 className="header">Astronauts Currently in Space</h2>
+                        <div className="d-flex align-items-center justify-content-center">
+                            <Table striped bordered hover variant="dark" className="table" responsive="sm">
+                                <thead className="table-header">
+                                    <tr>
+                                        <th>Astronaut</th>
+                                        <th>Spacecraft</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {astronautData && astronautData.map((index) => (
+                                        <tr key={index}>
+                                            <td className="table-data">{index.name}</td>
+                                            <td className="table-data">{index.craft}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </Table>
+                        </div>
+                </section>
                 </>
                 )
             }

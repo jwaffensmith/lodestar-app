@@ -34,9 +34,8 @@ function Iss() {
         // if loading is true, render div
         if (isLoading === true) {
             return (
-            <>
-            <Container className="d-flex align-items-center justify-content-center mt-5">
-                <Button variant="secondary" disabled>
+                <>
+                <div className="d-flex align-items-center justify-content-center mt-5">
                     <Spinner
                     as="span"
                     animation="grow"
@@ -45,8 +44,7 @@ function Iss() {
                     aria-hidden="true"
                     />
                     Loading... If viewing on https://lodestar-app.netlify.app, browser will block API fetch because it's an unsecure site :(
-                </Button>
-            </Container>
+                </div>
             </>
             )
         }
