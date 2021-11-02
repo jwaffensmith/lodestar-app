@@ -4,6 +4,7 @@ import 'firebase/auth';
 import { useHistory } from 'react-router-dom'
 import { Button, Card, Container } from "react-bootstrap";
 import AuthContext from '../auth/AuthContext';
+import ParticleBackground from '../particle-js/ParticleBackground';
 
 
 function Login () {
@@ -36,6 +37,7 @@ function Login () {
     } else {
         return (
             <>
+            <ParticleBackground/>
             <Container className="d-flex align-items-center justify-content-center login-container">
                 <Card className="text-center login-card">
                     <Card.Body >

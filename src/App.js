@@ -12,9 +12,9 @@ import Footer from './components/shared/Footer';
 import Login from './components/auth/Login';
 import AuthContext from './components/auth/AuthContext';
 import firebase from './components/auth/Firebase';
-// import PrivateRoute from './components/auth/PrivateRoute';
 import Astronaut from './components/astronauts/Astronaut';
 import PageNotFound from './components/shared/PageNotFound';
+
 
 
 function App() {
