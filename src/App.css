@@ -19,7 +19,15 @@ body {
   color: var(--card);
 }
 
-/* top nav and side nav */
+/* top nav */
+.navbar-brand {
+  background: var(--navbar);
+  color: var(--navbar-font);
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+/* side nav */
 .navbar {
   background: var(--navbar);
   color: var(--navbar-font);
@@ -34,12 +42,6 @@ body {
   color: var(--header);
 }
 
-.navbar-brand {
-  background: var(--navbar);
-  color: var(--navbar-font);
-  font-size: 2rem;
-  margin-top: 10px;
-}
 
 /* Log in page */
 .login-card {
@@ -80,12 +82,22 @@ body {
   height: 50vh;
 }
 
+.loading-spinner {
+  margin-top: 10rem;
+}
+
 /* Astronaut page */
 .table {
   width: 100%;
   max-width: 500px;
   text-align: center;
   font-size: 1.25rem;
+}
+
+/* restricted page */
+.restricted-page {
+  text-align: center;
+  margin-top: 5rem;
 }
 
 /* 404 error page */

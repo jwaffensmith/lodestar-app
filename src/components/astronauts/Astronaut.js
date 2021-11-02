@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Table from 'react-bootstrap/Table'
 import Container from 'react-bootstrap/Container'
+import AuthContext from '../auth/AuthContext';
+import Button from 'react-bootstrap/Button'
+
 
 function Astronaut() {
 
+    const { uid } = useContext(AuthContext);
     const [astronautData, setAstronautData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://api.open-notify.org/astros.json")
+        fetch("http://api.open-notify.org/astros.json")
         .then(res => res.json())
         .then(response => {
         setAstronautData(response.people);
@@ -18,6 +22,7 @@ function Astronaut() {
     }, []);
 
 
+    if (uid && uid) {
         // if loading is true, render div
         if (isLoading === true) {
             return <div>loading...</div>;
@@ -52,7 +57,17 @@ function Astronaut() {
                 </Container>
                 </>
                 )
-        }
+            }
+    } else {
+        return  (
+            <>
+            <div className="restricted-page">
+                <h1 style={{ padding: "2rem"}}>Please login to see this page.</h1>
+                <Button style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }}  href="/login" className="login-link">Go to Login</Button>
+            </div>
+            </>
+        )
+    }
 };
 
 export default Astronaut;

@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import L from "leaflet"
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import Container from 'react-bootstrap/Container'
+import Spinner from 'react-bootstrap/Spinner'
+import Button from 'react-bootstrap/Button'
+import AuthContext from '../auth/AuthContext';
+
 
 function Iss() {
 
+    const { uid } = useContext(AuthContext);
     const [issData, setIssData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://api.open-notify.org/iss-now.json")
+        fetch("http://api.open-notify.org/iss-now.json")
         .then(res => res.json())
         .then(response => {
         setIssData([response]);
@@ -26,9 +31,23 @@ function Iss() {
         });
     };
 
+    if (uid && uid) {
         // if loading is true, render div
         if (isLoading === true) {
-            return <div>loading...</div>;
+            return (
+            <Container className="d-flex align-items-center justify-content-center" className="loading-spinner">
+                <Button variant="secondary" disabled>
+                    <Spinner
+                    as="span"
+                    animation="grow"
+                    size="xxl"
+                    role="status"
+                    aria-hidden="true"
+                    />
+                    Loading...
+                </Button>
+            </Container>
+            )
         }
 
         // prevents error if api fetch takes time to load
@@ -52,7 +71,17 @@ function Iss() {
                     </Container>
                 </div>
             </>
-        );
+            );
+        }
+    } else {
+        return  (
+        <>
+        <div className="restricted-page">
+            <h1 style={{ padding: "2rem"}}>Please login to see this page.</h1>
+            <Button style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }}  href="/login" className="login-link">Go to Login</Button>
+        </div>
+        </>
+        )
     }
 };
 
