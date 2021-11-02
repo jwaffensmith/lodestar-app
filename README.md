@@ -7,7 +7,7 @@
 === Live Site ===
 
 https://lodestar-app.netlify.app
-* Note
+* NOTE\
 API fetch will not work on this live site since Open Notify API is an unsecure site.
 Browser will block request from https to http.
 Will need to find new API source for production.
@@ -28,7 +28,7 @@ Will need to find new API source for production.
 ### Requirements
 
 * Yarn installed globally\
-npm -g yarn
+npm install -g yarn
 
 * You’ll need to have Node 14.0.0 or later version on your local development machine
 
@@ -36,30 +36,31 @@ npm -g yarn
 
 1. Clone repo to local machine
 
-2. run yarn install\
-- installs dependencies\
-(e.g. firebase, react-bootsrap, leaflet, etc)
+2. Run command:
+yarn install
+
+(installs dependencies, e.g. firebase, react-bootsrap, leaflet, etc)
 
 3. Configure Firebase account\
-Add Project\
+Add Project
 - Add a firebase project (https://firebase.google.com/)
 - Project name can be any name of your choosing
 - Disable google analytics and click "create project"
-- -> authentication (left side bar)
-- -> Get started
-- -> add Google for sign-in method
-- -> Enable Google 
-- -> add email address
-- Register App to get config variables
-- -> Go to settings (gear in left side bar)
-- -> Project settings
-- -> Your apps (bottom of general settings)
-- -> Add web </>
-- -> Register app
-- -> input config settings into dotenv file (use dotenv.example file for reference)
+-> authentication (left side bar)\
+-> Get started\
+-> add Google for sign-in method\
+-> Enable Google\
+-> add email address\
+- Register App to get config variables\
+-> Go to settings (gear in left side bar)\
+-> Project settings\
+-> Your apps (bottom of general settings)\
+-> Add web </>\
+-> Register app\
+-> input config settings into dotenv file (use dotenv.example file for reference)\
 
-4. yarn start\
-- runs app in dev mode
+4. yarn start
+- runs app in dev mode (localhost:3000)
 
 === Wireframes ===
 
@@ -67,10 +68,10 @@ https://wireframepro.mockflow.com/view/MOOxR3ApUmb
 
 === User Stories ===
 
-1. Unauthenticated users are directed to a login page that welcomes them to the application and implements a 3rd party Single Sign On authentication with Google.
-2. Unauthenticated users trying to access any other resources are directed to login with a button linking to login page. 
-3. Once authenticated, user lands on profile page that welcomes them with some personal info found in their login info, “Greetings, displayName!”.
-4. Once authenticated, the user is presented with side menu with links to 
+1. Unauthenticated users are directed to a login page that welcomes them to the application and implements a 3rd party Single Sign On authentication with Google through Firebase.
+2. Unauthenticated users trying to access any other resources are directed to log in with a button linking to login page. 
+3. Once authenticated, user lands on profile page that welcomes them with, “Greetings, displayName!”.
+4. Once authenticated, the user is presented with side menu with links to:
 - “Profile” - redirects them to their welcome page with profile information.
 - “Astronauts” - A page retrieves the current astronauts in space, displayed on a table with two columns containing the data for the “Astronaut Name” and the “Craft” they are located on.
 - “ISS Location” - A page with a map showing the current position of the International Space Station.
