@@ -1,5 +1,6 @@
 import Image from 'react-bootstrap/Image'
 
+// presentational component for 404 page
 function PageNotFound () {
     return (
         <section className="error-page">
