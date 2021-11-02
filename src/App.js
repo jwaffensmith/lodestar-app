@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import Profile from './components/profile/Profile';
 import Iss from './components/iss/Iss';
 import Navigation from './components/shared/Navigation';
+import Footer from './components/shared/Footer';
 import Login from './components/auth/Login';
 import AuthContext from './components/auth/AuthContext';
 import firebase from './components/auth/Firebase';
@@ -15,8 +16,6 @@ import PrivateRoute from './components/auth/PrivateRoute';
 import Astronaut from './components/astronauts/Astronaut';
 import PageNotFound from './components/shared/PageNotFound';
 
-
-// add private route
 
 function App() {
 
@@ -47,28 +46,29 @@ function App() {
   };
 
   return (
-    <div>
-        <AuthContext.Provider 
-        value={{
-          ...user,
-          ...isAuth,
-          logout
-        }}>
-          <Navigation/>
-          <Switch>
-              <PrivateRoute path="/profile" component={ Profile } isAuth={isAuth}/>
-              <PrivateRoute path="/astronauts" component={ Astronaut } isAuth={isAuth}/>
-              <PrivateRoute path="/iss" component={ Iss } isAuth={isAuth} />
+    <div id="page-container">
+      <div id="content-wrap">
+          <AuthContext.Provider 
+          value={{
+            ...user,
+            ...isAuth,
+            logout
+          }}>
+            <Navigation/>
+            <Switch>
               <Route path="/login" component={ Login }/>
-              <Route component={ PageNotFound }/>
+              <Route path="/profile" component={ Profile } />
+              <Route path="/astronauts" component={ Astronaut } />
+              <Route path="/iss" component={ Iss }  />
               <Redirect from="/logout" to="/login"/>
               <Redirect from="/" to="/login"/>
-          </Switch>
-          <Footer/>
-        </AuthContext.Provider>
-    </div>
+              <Route component={ PageNotFound } />
+            </Switch>
+          </AuthContext.Provider>
+        </div>
+        <Footer/>
+      </div>
     );
 }
 
 export default App;
-{/* <Redirect to="/login" component={ Login }/> */}

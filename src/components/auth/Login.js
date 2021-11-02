@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from "./Firebase";
 import 'firebase/auth';
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { Button, Card } from "react-bootstrap";
 
 function Login () {
@@ -9,7 +9,7 @@ function Login () {
     // hook to redirect to profile after login
     const history = useHistory();
 
-    // login with google
+    // login with google function
     const signInWithFirebase = async () => {
         try {
             const provider = new firebase.auth.GoogleAuthProvider();

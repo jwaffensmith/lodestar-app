@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table'
-import AuthContext from '../auth/AuthContext';
-import { useContext } from 'react';
 
 function Astronaut() {
 
@@ -32,8 +30,9 @@ function Astronaut() {
         } else if  (astronautData) {
             return (
                 <>
+                <div className="table"> 
                     <Table striped bordered hover variant="dark">
-                        <thead>
+                        <thead className="table-header">
                             <tr>
                                 <th>Astronaut</th>
                                 <th>Spacecraft</th>
@@ -43,12 +42,13 @@ function Astronaut() {
                             {astronautData &&
                             astronautData.map((index) => (
                                 <tr key={index}>
-                                    <td>{index.name}</td>
-                                    <td>{index.craft}</td>
+                                    <td className="table-data">{index.name}</td>
+                                    <td className="table-data">{index.craft}</td>
                                 </tr>
                             ))}
                         </tbody>
                     </Table>
+                </div>
                 </>
                 )
         }

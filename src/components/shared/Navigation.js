@@ -11,8 +11,8 @@ const Navigation = () => {
     if (uid && uid) {
         return (
             <>
-            <Nav className="justify-content-center app-name" activeKey="/">
-                <Navbar.Brand>
+            <Nav className="justify-content-center nav-bar" activeKey="/">
+                <Navbar.Brand className="app-name">
                     <Container>
                         <img
                         alt="logo"
@@ -25,7 +25,7 @@ const Navigation = () => {
                     </Container>
                 </Navbar.Brand>
             </Nav>
-            <Nav defaultActiveKey="/" className="flex-column">
+            <Nav defaultActiveKey="/" className="flex-column side-navbar">
                 <Nav.Link href="/astronauts">Astronauts</Nav.Link>
                 <Nav.Link href="/iss">ISS Location</Nav.Link>
                 <Nav.Link href="/profile">Profile</Nav.Link>
@@ -35,8 +35,8 @@ const Navigation = () => {
         )
     } else {
         return (
-            <Nav className="justify-content-center app-name" activeKey="/">
-                <Navbar.Brand href="">
+            <Nav className="justify-content-center navbar" activeKey="/">
+                <Navbar.Brand href="" className="app-name">
                     <Container>
                         <img
                         alt="logo"

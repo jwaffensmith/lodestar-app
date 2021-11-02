@@ -1,7 +1,12 @@
+import Image from 'react-bootstrap/Image'
 
 function PageNotFound () {
     return (
-        <h1> 404 You're in outerspace. Page not found. </h1>
+        <section className="error-page">
+            <h1> 404 Error </h1>
+            <p>Page not found. You're in outerspace.</p>
+            <Image className="space-image" src="https://source.unsplash.com/Yj1M5riCKk4" fluid />
+        </section>
     )
 }
 

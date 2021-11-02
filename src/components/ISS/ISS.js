@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import L from "leaflet"
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
-import AuthContext from '../auth/AuthContext';
-import { useContext } from 'react';
 
-function IssFetch() {
+function Iss() {
 
     const [issData, setIssData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -55,4 +53,4 @@ function IssFetch() {
         }
 };
 
-export default IssFetch;
+export default Iss;
