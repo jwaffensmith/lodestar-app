@@ -14,7 +14,7 @@ function Iss() {
     const { uid } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch("/api/iss-now.json")
+        fetch("http://api.open-notify.org/iss-now.json")
         .then(res => res.json())
         .then(response => {
         setIssData([response]);
@@ -34,6 +34,8 @@ function Iss() {
         // if loading is true, render div
         if (isLoading === true) {
             return (
+            <>
+            <Container className="d-flex align-items-center justify-content-center mt-5">
                 <Button variant="secondary" disabled>
                     <Spinner
                     as="span"
@@ -42,8 +44,10 @@ function Iss() {
                     role="status"
                     aria-hidden="true"
                     />
-                    Loading...
+                    Loading... If viewing on https://lodestar-app.netlify.app, browser will block API fetch because it's an unsecure site :(
                 </Button>
+            </Container>
+            </>
             )
         }
         // prevents error if api fetch takes time to load
@@ -73,7 +77,7 @@ function Iss() {
         return  (
         <>
         <div className="restricted-page">
-            <h1 style={{ padding: "2rem"}}>Please login to see this page.</h1>
+            <h1 style={{ padding: "2rem"}}>Please log in to see this page.</h1>
             <Button style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }}  href="/login" className="login-link">Go to Login</Button>
         </div>
         </>

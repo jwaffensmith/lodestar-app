@@ -35,7 +35,7 @@ function Profile () {
         return  (
             <>
             <div className="restricted-page">
-                <h1 style={{ padding: "2rem"}}>Please login to see this page.</h1>
+                <h1 style={{ padding: "2rem"}}>Please log in to see this page.</h1>
                 <Button style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }}  href="/login" className="login-link">Go to Login</Button>
             </div>
             </>

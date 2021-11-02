@@ -13,7 +13,7 @@ function Astronaut() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("/api/astros.json")
+        fetch("http://api.open-notify.org/astros.json")
         .then(res => res.json())
         .then(response => {
         setAstronautData(response.people);
@@ -27,16 +27,20 @@ function Astronaut() {
         // if loading is true, render div
         if (isLoading === true) {
             return (
-                <Button variant="secondary" disabled>
-                    <Spinner
-                    as="span"
-                    animation="grow"
-                    size="xxl"
-                    role="status"
-                    aria-hidden="true"
-                    />
-                    Loading...
-                </Button>
+                <>
+                <Container className="d-flex align-items-center justify-content-center mt-5">
+                    <Button variant="secondary" disabled>
+                        <Spinner
+                        as="span"
+                        animation="grow"
+                        size="xxl"
+                        role="status"
+                        aria-hidden="true"
+                        />
+                        Loading... If viewing on https://lodestar-app.netlify.app, browser will block API fetch because it's an unsecure site :(
+                    </Button>
+                </Container>
+                </>
             );
         }
 
@@ -74,7 +78,7 @@ function Astronaut() {
         return  (
             <>
             <div className="restricted-page">
-                <h1 style={{ padding: "2rem"}}>Please login to see this page.</h1>
+                <h1 style={{ padding: "2rem"}}>Please log in to see this page.</h1>
                 <Button style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }}  href="/login" className="login-link">Go to Login</Button>
             </div>
             </>
