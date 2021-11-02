@@ -14,7 +14,7 @@ function Iss() {
     const { uid } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch("http://api.open-notify.org/iss-now.json")
+        fetch("/api/iss-now.json")
         .then(res => res.json())
         .then(response => {
         setIssData([response]);
@@ -34,7 +34,7 @@ function Iss() {
         // if loading is true, render div
         if (isLoading === true) {
             return (
-                <Button variant="secondary" disabled className="d-flex align-items-center justify-content-center">
+                <Button variant="secondary" disabled>
                     <Spinner
                     as="span"
                     animation="grow"

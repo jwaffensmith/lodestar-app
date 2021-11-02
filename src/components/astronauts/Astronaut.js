@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table'
 import Container from 'react-bootstrap/Container'
 import AuthContext from '../auth/AuthContext';
 import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/Spinner'
 
 
 function Astronaut() {
@@ -12,7 +13,7 @@ function Astronaut() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://api.open-notify.org/astros.json")
+        fetch("/api/astros.json")
         .then(res => res.json())
         .then(response => {
         setAstronautData(response.people);
@@ -25,7 +26,18 @@ function Astronaut() {
     if (uid && uid) {
         // if loading is true, render div
         if (isLoading === true) {
-            return <div>loading...</div>;
+            return (
+                <Button variant="secondary" disabled>
+                    <Spinner
+                    as="span"
+                    animation="grow"
+                    size="xxl"
+                    role="status"
+                    aria-hidden="true"
+                    />
+                    Loading...
+                </Button>
+            );
         }
 
         // prevents error if api fetch takes time to load
