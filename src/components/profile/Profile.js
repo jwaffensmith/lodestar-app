@@ -9,6 +9,7 @@ function Profile () {
 
     const { uid, displayName } = useContext(AuthContext);
     
+    // if user, display welcome card with user.displayName
     if (uid && uid) {
 
         return ( 
@@ -37,6 +38,9 @@ function Profile () {
             </>
         )
     } else {
+        // if no user.uid, display page is restricted
+        // temporary solution
+        // will need to refactor auth
         return  (
             <>
             <div className="restricted-page">

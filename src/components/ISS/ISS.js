@@ -13,6 +13,7 @@ function Iss() {
     const [isLoading, setIsLoading] = useState(true);
     const { uid } = useContext(AuthContext);
 
+    // fetch api data and set state 
     useEffect(() => {
         fetch("http://api.open-notify.org/iss-now.json")
         .then(res => res.json())
@@ -73,6 +74,9 @@ function Iss() {
             );
         }
     } else {
+        // if no user.uid, display page is restricted
+        // temporary solution
+        // will need to refactor auth
         return  (
         <>
         <div className="restricted-page">

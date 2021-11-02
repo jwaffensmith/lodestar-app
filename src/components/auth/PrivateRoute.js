@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 
+// component to make routes available to only authorized user
+// had issues with redirecting will need to refactor before use
 function PrivateRoute({auth: auth, component: Component, ...rest}) {
 
     return (

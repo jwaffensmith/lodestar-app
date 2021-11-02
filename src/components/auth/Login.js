@@ -25,6 +25,9 @@ function Login () {
         }
     };
 
+    // if no user.uid, display page is restricted
+    // temporary solution
+    // will need to refactor auth
     if (uid && uid) {
         return ( 
             <>

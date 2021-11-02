@@ -1,3 +1,4 @@
+// configuration for particlejs (animations on login page)
 const ParticleConfig = 
 {
     particles: {

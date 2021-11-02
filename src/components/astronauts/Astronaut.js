@@ -11,6 +11,7 @@ function Astronaut() {
     const [astronautData, setAstronautData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    // fetch api data and set state 
     useEffect(() => {
         fetch("http://api.open-notify.org/astros.json")
         .then(res => res.json())
@@ -73,6 +74,9 @@ function Astronaut() {
                 )
             }
     } else {
+        // if no user.uid, display page is restricted
+        // temporary solution
+        // will need to refactor auth
         return  (
             <>
             <div className="restricted-page">
