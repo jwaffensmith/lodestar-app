@@ -29,7 +29,6 @@ function App() {
           // user is logged in
           setUser(user);
           setIsAuth(true);
-          console.log(user);
         } else {
           // user is logged out
           setUser(null)

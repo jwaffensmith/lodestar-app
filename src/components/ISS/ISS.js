@@ -9,9 +9,9 @@ import AuthContext from '../auth/AuthContext';
 
 function Iss() {
 
-    const { uid } = useContext(AuthContext);
     const [issData, setIssData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const { uid } = useContext(AuthContext);
 
     useEffect(() => {
         fetch("http://api.open-notify.org/iss-now.json")
@@ -19,11 +19,10 @@ function Iss() {
         .then(response => {
         setIssData([response]);
         setIsLoading(false);
-        console.log(response)
         });
     }, []);
 
-      // function to set custom map marker
+    // function to set custom map marker
     function getIcon() {
             return L.icon ({
             iconUrl: "../../assets/iss.png",
@@ -35,8 +34,7 @@ function Iss() {
         // if loading is true, render div
         if (isLoading === true) {
             return (
-            <Container className="d-flex align-items-center justify-content-center" className="loading-spinner">
-                <Button variant="secondary" disabled>
+                <Button variant="secondary" disabled className="d-flex align-items-center justify-content-center">
                     <Spinner
                     as="span"
                     animation="grow"
@@ -46,16 +44,14 @@ function Iss() {
                     />
                     Loading...
                 </Button>
-            </Container>
             )
         }
-
         // prevents error if api fetch takes time to load
         // if loading is true, render div
         if (!issData) {
             return <div></div>;
-        
-        } else if  (issData) {
+
+        } else if (issData) {
             return (
             <>
                 <div id="map">
