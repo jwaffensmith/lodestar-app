@@ -26,10 +26,10 @@ const Navigation = () => {
                 </Navbar.Brand>
             </Nav>
             <Nav defaultActiveKey="/" className="flex-column side-navbar">
+                <Nav.Link href="/logout" onClick={logout}>Sign Out </Nav.Link>
+                <Nav.Link href="/profile">Profile</Nav.Link>
                 <Nav.Link href="/astronauts">Astronauts</Nav.Link>
                 <Nav.Link href="/iss">ISS Location</Nav.Link>
-                <Nav.Link href="/profile">Profile</Nav.Link>
-                <Nav.Link href="/logout" onClick={logout}>Sign Out </Nav.Link>
             </Nav>
             </>
         )
