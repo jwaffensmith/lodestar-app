@@ -1,7 +1,7 @@
 :root {
-  --button: #C8D5B9;
-  --success: #4A7C59;
-  --warn: #FAF3DD;
+  --success: #3F8592;
+  --warn: #FF925C;
+  --danger: #C51B29;
   --background: #1d2c41;
   --navbar: #141527;
   --navbar-font: #c4c8d4;
