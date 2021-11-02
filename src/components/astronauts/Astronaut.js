@@ -35,7 +35,10 @@ function Astronaut() {
                     role="status"
                     aria-hidden="true"
                     />
-                    Loading... If viewing on https://lodestar-app.netlify.app, browser will block API fetch because it's an unsecure site :(
+                </div>
+                <div className="d-flex align-items-center justify-content-center">
+                    <p> Loading... </p>
+                    <p>If viewing on https://lodestar-app.netlify.app, browser will block data fetch because it's from an http site :(</p>
                 </div>
                 </>
             );
