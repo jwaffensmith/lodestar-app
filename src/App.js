@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Profile from './components/profile/Profile';
-import Iss from './components/iss/Iss';
+import Iss from './components/ISS/ISS';
 import Navigation from './components/shared/Navigation';
 import Footer from './components/shared/Footer';
 import Login from './components/auth/Login';
