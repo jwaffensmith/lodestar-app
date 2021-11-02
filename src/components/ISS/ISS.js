@@ -9,7 +9,7 @@ function Iss() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://api.open-notify.org/iss-now.json")
+        fetch("https://api.open-notify.org/iss-now.json")
         .then(res => res.json())
         .then(response => {
         setIssData([response]);

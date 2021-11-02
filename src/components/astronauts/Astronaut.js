@@ -8,7 +8,7 @@ function Astronaut() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://api.open-notify.org/astros.json")
+        fetch("https://api.open-notify.org/astros.json")
         .then(res => res.json())
         .then(response => {
         setAstronautData(response.people);
