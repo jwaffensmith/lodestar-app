@@ -42,26 +42,26 @@ yarn install
 
 (installs dependencies, e.g. firebase, react-bootsrap, leaflet, etc)
 
-3. Configure Firebase account\
+3. Configure Firebase account
 Add Project
 - Add a firebase project (https://firebase.google.com/)
 - Project name can be any name of your choosing
 - Disable google analytics and click "create project"
--> authentication (left side bar)\
+-> Authentication (left side bar)\
 -> Get started\
--> add Google for sign-in method\
+-> Add Google for sign-in method\
 -> Enable Google\
--> add email address\
+-> Add email address
 - Register App to get config variables\
 -> Go to settings (gear in left side bar)\
 -> Project settings\
 -> Your apps (bottom of general settings)\
 -> Add web </>\
 -> Register app\
--> input config settings into dotenv file (use dotenv.example file for reference)\
+-> Input config settings into dotenv file (use dotenv.example file for reference)
 
 4. yarn start
-- runs app in dev mode (localhost:3000)
+Runs app in dev mode (localhost:3000)
 
 === Wireframes ===
 
@@ -71,7 +71,7 @@ https://wireframepro.mockflow.com/view/MOOxR3ApUmb
 
 1. Unauthenticated users are directed to a login page that welcomes them to the application and implements a 3rd party Single Sign On authentication with Google through Firebase.
 2. Unauthenticated users trying to access any other resources are directed to log in with a button linking to login page. 
-3. Once authenticated, user lands on profile page that welcomes them with, “Greetings, displayName!”.
+3. Once authenticated, user lands on profile page that welcomes them with, “Greetings, displayName!”
 4. Once authenticated, the user is presented with side menu with links to:
 - “Profile” - redirects them to their welcome page with profile information.
 - “Astronauts” - A page retrieves the current astronauts in space, displayed on a table with two columns containing the data for the “Astronaut Name” and the “Craft” they are located on.
