@@ -6,7 +6,11 @@
 
 === Live Site ===
 
-(Coming Soon)
+https://lodestar-app.netlify.app
+* Note
+API fetch will not work on this live site since Notify API is an insecure site.
+Browser will block request from https to http.
+Will need to find new API source for production.
 
 === Technologies ===
 
@@ -21,15 +25,51 @@
 
 === Setup ===
 
-(Coming Soon)
+### Requirements:
+
+* Yarn installed globally
+npm -g yarn
+
+* You’ll need to have Node 14.0.0 or later version on your local development machine
+
+### Setup
+
+1. Clone repo on local machine
+
+2. run yarn install 
+- installs dependencies
+(e.g. firebase, react-bootsrap, leaflet, etc)
+
+3. configure firebase account
+Add Project
+- add a firebase project (https://firebase.google.com/)
+- project name can be any name of your choosing
+- disable google analytics and click "create project"
+-> authentication (left side bar)
+-> Get started
+-> add Google for sign-in method
+-> Enable Google 
+-> add email address
+Register App to get config variables
+-> Go to settings (gear in left side bar)
+-> Project settings
+-> Your apps (bottom of general settings)
+-> Add web </>
+-> Register app
+-> input config settings into dotenv file (use dotenv.example file for reference)
+
+4. yarn start 
+- runs app in dev mode
 
 === Wireframes ===
 
-https://support.mockflow.com/article/108-how-to-share-projects-in-mockflow
+https://wireframepro.mockflow.com/view/MOOxR3ApUmb
 
 === User Stories ===
 
 (Coming Soon)
+
+=== Craete React App ===
 
 # Getting Started with Create React App
 
