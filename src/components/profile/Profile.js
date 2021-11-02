@@ -1,6 +1,6 @@
 import AuthContext from '../auth/AuthContext';
 import { React, useContext } from 'react';
-import { Container, Card, Button } from "react-bootstrap";
+import { Container, Card, Button, Image } from "react-bootstrap";
 
 
 function Profile () {
@@ -10,12 +10,20 @@ function Profile () {
     return ( 
         <>
         <Container className="d-flex align-items-center justify-content-center">
-            <Card>
+            <h2 className="text-center mb-4 profile-header">Greetings, {displayName && displayName}!</h2>
+        </Container>
+        <Container className="d-flex align-items-center justify-content-center">
+            <Card style={{ width: '18rem'}} className="text-center profile-cards">
+                <Card.Img variant="top" src="../../assets/astronaut.png"  />
                 <Card.Body>
-                    <h2 className="text-center mb-4">Greetings, {displayName && displayName}!</h2>
+                    <Button  style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }} href="/astronauts" className="profile-button">Who's in Space?</Button>
                 </Card.Body>
-                <Button href="/astronauts"> Who's in Space? </Button>
-                <Button href="/iss"> Where is the ISS? </Button>
+            </Card>
+            <Card style={{ width: '18rem' }} className="text-center profile-cards">
+                <Card.Img variant="top" src="../../assets/iss2.png" />
+                <Card.Body>
+                    <Button style={{ background: '#1d2c41', border: "#1d2c41", padding: "10px" }}  href="/iss" className="profile-button">Where is the ISS?</Button>
+                </Card.Body>
             </Card>
         </Container>
         </>

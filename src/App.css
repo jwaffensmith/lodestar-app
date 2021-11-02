@@ -1,8 +1,8 @@
 :root {
   --button: #C8D5B9;
   --success: #4A7C59;
-  --background: #1d2c41;
   --warn: #FAF3DD;
+  --background: #1d2c41;
   --navbar: #141527;
   --navbar-font: #c4c8d4;
   --font-color: #1d2c41;
@@ -19,9 +19,19 @@ body {
   color: var(--card);
 }
 
+/* top nav and side nav */
 .navbar {
   background: var(--navbar);
   color: var(--navbar-font);
+}
+
+.nav-link {
+  color: var(--navbar-font);
+  font-size: 1.5rem;
+}
+
+.nav-link:hover {
+  color: var(--header);
 }
 
 .navbar-brand {
@@ -31,10 +41,54 @@ body {
   margin-top: 10px;
 }
 
+/* Log in page */
+.login-card {
+  color: var(--navbar);
+  background: var(--header);
+  width: 100%;
+  max-width: 50%;
+}
+
+.login-container {
+  margin-top: 10rem;
+}
+
+.login-title {
+  font-size: 2rem;
+}
+
+.login-text {
+  font-size: 1rem;
+}
+
+/* Profile page */
+.profile-header {
+  color: var(--navbar-font);
+}
+
+.profile-cards {
+  margin: 2rem;
+}
+
+/* Iss page */
 #map { 
   height: 180px; 
 }
 
+.leaflet-container{
+  width: 50vw;
+  height: 50vh;
+}
+
+/* Astronaut page */
+.table {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* 404 error page */
 .space-image {
   width: 100%;
   max-width: 500px;
@@ -47,20 +101,7 @@ body {
   margin-top: 5rem;
 }
 
-.table {
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
-  justify-content: center;
-  font-size: 1rem;
-  margin: 5rem;
-}
-
-.leaflet-container{
-  width: 50vw;
-  height: 50vh;
-}
-
+/* Footer */
 #content-container {
   position: relative;
   min-height: 100vh;

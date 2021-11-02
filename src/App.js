@@ -61,7 +61,7 @@ function App() {
               <Route path="/astronauts" component={ Astronaut } />
               <Route path="/iss" component={ Iss }  />
               <Redirect from="/logout" to="/login"/>
-              <Redirect from="/" to="/login"/>
+              <Redirect from="/" exact to="/login"/>
               <Route component={ PageNotFound } />
             </Switch>
           </AuthContext.Provider>

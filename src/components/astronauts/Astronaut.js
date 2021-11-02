@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table'
+import Container from 'react-bootstrap/Container'
 
 function Astronaut() {
 
@@ -30,8 +31,8 @@ function Astronaut() {
         } else if  (astronautData) {
             return (
                 <>
-                <div className="table"> 
-                    <Table striped bordered hover variant="dark">
+                <Container className="d-flex align-items-center justify-content-center">
+                    <Table striped bordered hover variant="dark" className="table">
                         <thead className="table-header">
                             <tr>
                                 <th>Astronaut</th>
@@ -48,7 +49,7 @@ function Astronaut() {
                             ))}
                         </tbody>
                     </Table>
-                </div>
+                </Container>
                 </>
                 )
         }

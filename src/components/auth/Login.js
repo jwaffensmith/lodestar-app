@@ -1,8 +1,8 @@
 import React from 'react';
 import firebase from "./Firebase";
 import 'firebase/auth';
-import { Link, useHistory } from 'react-router-dom'
-import { Button, Card } from "react-bootstrap";
+import { useHistory } from 'react-router-dom'
+import { Button, Card, Container } from "react-bootstrap";
 
 function Login () {
 
@@ -22,14 +22,19 @@ function Login () {
 
     return (
         <>
-            <Card>
-                <Card.Body>
-                    <h2 className="text-center mb-4">Greetings!</h2>
-                    <Button onClick={ signInWithFirebase } className="justify-content-center w-30" >
-                    Log In with Google
-                    </Button>
+        <Container className="d-flex align-items-center justify-content-center login-container">
+            <Card className="text-center login-card">
+                <Card.Body >
+                    <Card.Title className="login-title">Greetings, Earthling!</Card.Title>
+                    <Card.Text className="login-text">
+                    Log in to see who's currently in space.
+                    </Card.Text>
+                    <Button onClick={ signInWithFirebase } className="justify-content-center login-button" >
+                        Log in With google
+                        </Button>
                 </Card.Body>
             </Card>
+        </Container>
         </>
     )
 };
