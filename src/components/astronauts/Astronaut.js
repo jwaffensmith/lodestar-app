@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect, } from 'react';
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
 import AuthContext from '../auth/AuthContext';
-import Button from 'react-bootstrap/Button'
-import Spinner from 'react-bootstrap/Spinner'
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 function Astronaut() {

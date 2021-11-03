@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import L from "leaflet"
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
-import Container from 'react-bootstrap/Container'
-import Spinner from 'react-bootstrap/Spinner'
-import Button from 'react-bootstrap/Button'
+import L from "leaflet";
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
+import Button from 'react-bootstrap/Button';
 import AuthContext from '../auth/AuthContext';
 
 

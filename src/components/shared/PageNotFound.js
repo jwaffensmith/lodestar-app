@@ -1,4 +1,4 @@
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
 
 // presentational component for 404 page
 function PageNotFound () {
@@ -9,6 +9,6 @@ function PageNotFound () {
             <Image className="space-image" src="https://source.unsplash.com/Yj1M5riCKk4" fluid />
         </section>
     )
-}
+};
 
 export default PageNotFound;
