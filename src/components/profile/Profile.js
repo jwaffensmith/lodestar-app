@@ -10,7 +10,7 @@ function Profile () {
     const { uid, displayName } = useContext(AuthContext);
     
     // if user, display welcome card with user.displayName
-    if (uid && uid) {
+    if (uid) {
 
         return ( 
             <>

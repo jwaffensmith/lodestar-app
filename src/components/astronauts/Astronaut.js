@@ -7,7 +7,8 @@ import Spinner from 'react-bootstrap/Spinner';
 
 function Astronaut() {
 
-    const { uid } = useContext(AuthContext);
+    // had to remove deconstructed var
+    const   uid   = useContext(AuthContext);
     const [astronautData, setAstronautData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -17,12 +18,13 @@ function Astronaut() {
         .then(res => res.json())
         .then(response => {
         setAstronautData(response.people);
+        console.log(response.people)
         setIsLoading(false);
         });
     }, []);
 
 
-    if (uid && uid) {
+    if (uid) {
         // if loading is true, render div
         if (isLoading === true) {
             return (
@@ -52,7 +54,7 @@ function Astronaut() {
         } else if  (astronautData) {
             return (
                 <>
-                <section>
+                <section className="astronaut-section">
                     <h2 className="header">Astronauts Currently in Space</h2>
                         <div className="d-flex align-items-center justify-content-center">
                             <Table striped bordered hover variant="dark" className="table" responsive="sm">
@@ -63,7 +65,7 @@ function Astronaut() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {astronautData && astronautData.map((index) => (
+                                    {astronautData.map((index) => (
                                         <tr key={index}>
                                             <td className="table-data">{index.name}</td>
                                             <td className="table-data">{index.craft}</td>

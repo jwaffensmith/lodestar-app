@@ -29,6 +29,7 @@ function App() {
           // user is logged in
           setUser(user);
           setIsAuth(true);
+          console.log(user.uid)
         } else {
           // user is logged out
           setUser(null)

@@ -23,6 +23,7 @@ function Iss() {
         });
     }, []);
 
+
     // function to set custom map marker
     function getIcon() {
             return L.icon ({
@@ -31,7 +32,7 @@ function Iss() {
         });
     };
 
-    if (uid && uid) {
+    if (uid) {
         // if loading is true, render div
         if (isLoading === true) {
             return (

@@ -28,7 +28,7 @@ function Login () {
     // if no user.uid, display page is restricted
     // temporary solution
     // will need to refactor auth
-    if (uid && uid) {
+    if (uid) {
         return ( 
             <>
             <div className="restricted-page">
