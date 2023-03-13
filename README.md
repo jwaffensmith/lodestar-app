@@ -8,8 +8,7 @@
 
 https://lodestar-app.netlify.app
 * NOTE\
-API fetch will not work on this live site since Open Notify API is an unsecure site.
-Browser will block request from https to http.
+API fetch for astronaut data will not work on this live site since Open Notify API is an unsecure site. Browser will block request from https to http.
 Will need to find new API source for production.
 
 === Technologies ===
@@ -28,10 +27,9 @@ Will need to find new API source for production.
 
 ### Requirements
 
-* Yarn installed globally\
-npm install -g yarn
+* Yarn installed globally
 
-* You’ll need to have Node 14.0.0 or later version on your local development machine
+* Node >=14 
 
 ### Setup
 

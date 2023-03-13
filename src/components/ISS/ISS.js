@@ -15,7 +15,7 @@ function Iss() {
 
     // fetch api data and set state 
     useEffect(() => {
-        fetch("http://api.open-notify.org/iss-now.json")
+        fetch("https://api.wheretheiss.at/v1/satellites/25544")
         .then(res => res.json())
         .then(response => {
         setIssData([response]);
@@ -48,28 +48,32 @@ function Iss() {
                 </div>
                 <div className="d-flex align-items-center justify-content-center">
                     <p> Loading... </p>
-                    <p>If viewing on https://lodestar-app.netlify.app, browser will block data fetch because it's from an http site :(</p>
                 </div>
             </>
             )
         }
-        // prevents error if api fetch takes time to load
-        // if loading is true, render div
         if (!issData) {
             return <div></div>;
 
         } else if (issData) {
+            const latitude = issData[0].latitude.toFixed(3)
+            const longitude = issData[0].longitude.toFixed(3)
+            const altitude = issData[0].altitude
+            const velocity = issData[0].velocity
             return (
             <>
                 <div id="map">
                     <h2 className="header">Current Location of ISS</h2>
+                    <h4 className="stats">Coordinates: &nbsp;{latitude}&deg;, &nbsp;{longitude}&deg;</h4>
+                    <h4 className="stats">Altitude:  &nbsp;{altitude}</h4>
+                    <h4 className="stats">Velocity: &nbsp;{velocity}</h4>
                     <Container className="d-flex align-items-center justify-content-center mt-5">
-                        <MapContainer center={[issData[0].iss_position.latitude, issData[0].iss_position.longitude]} zoom={2} scrollWheelZoom={true}>
+                        <MapContainer center={[issData[0].latitude, issData[0].longitude]} zoom={2} scrollWheelZoom={true}>
                             <TileLayer
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
-                            <Marker position={[issData[0].iss_position.latitude, issData[0].iss_position.longitude]} icon={ getIcon() }>
+                            <Marker position={[issData[0].latitude, issData[0].longitude]} icon={ getIcon() }>
                             </Marker>
                         </MapContainer>
                     </Container>

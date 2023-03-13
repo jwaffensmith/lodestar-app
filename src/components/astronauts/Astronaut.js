@@ -7,7 +7,6 @@ import Spinner from 'react-bootstrap/Spinner';
 
 function Astronaut() {
 
-    // had to remove deconstructed var
     const   uid   = useContext(AuthContext);
     const [astronautData, setAstronautData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

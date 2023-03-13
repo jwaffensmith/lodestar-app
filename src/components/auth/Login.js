@@ -49,7 +49,7 @@ function Login () {
                         Log in to see who's currently in space.
                         </Card.Text>
                         <Button onClick={ signInWithFirebase } className="justify-content-center login-button" >
-                            Log in With google
+                            Log in with Google
                             </Button>
                     </Card.Body>
                 </Card>

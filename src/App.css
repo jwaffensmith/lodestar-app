@@ -127,6 +127,10 @@ body {
   margin-top: 10px;
 }
 
+.stats {
+  text-align: center;
+}
+
 /* restricted page */
 .restricted-page {
   text-align: center;
