@@ -16,7 +16,6 @@ import Astronaut from './components/astronauts/Astronaut';
 import PageNotFound from './components/shared/PageNotFound';
 
 
-
 function App() {
 
   const [user, setUser] = useState(null);
@@ -29,7 +28,6 @@ function App() {
           // user is logged in
           setUser(user);
           setIsAuth(true);
-          console.log(user.uid)
         } else {
           // user is logged out
           setUser(null)

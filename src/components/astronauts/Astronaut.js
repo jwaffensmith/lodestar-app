@@ -16,9 +16,9 @@ function Astronaut() {
         fetch("http://api.open-notify.org/astros.json")
         .then(res => res.json())
         .then(response => {
-        setAstronautData(response.people);
-        console.log(response.people)
-        setIsLoading(false);
+            setAstronautData(response.people);
+            console.log(response.people)
+            setIsLoading(false);
         });
     }, []);
 
