@@ -15,7 +15,7 @@ function Iss() {
 
     // fetch api data and set state 
     useEffect(() => {
-        fetch("https://api.wheretheiss.at/v1/satellites/25544")
+        fetch("https://api.wheretheiss.at/v1/satellites/25544/?units=miles")
         .then(res => res.json())
         .then(response => {
         setIssData([response]);
@@ -58,8 +58,8 @@ function Iss() {
         } else if (issData) {
             const latitude = issData[0].latitude.toFixed(3)
             const longitude = issData[0].longitude.toFixed(3)
-            const altitude = issData[0].altitude
-            const velocity = issData[0].velocity
+            const altitude = issData[0].altitude.toFixed(2) + " miles"
+            const velocity = issData[0].velocity.toFixed(2) + " mph"
             return (
             <>
                 <div id="map">

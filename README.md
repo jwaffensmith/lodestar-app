@@ -8,7 +8,7 @@
 
 https://lodestar-app.netlify.app
 * NOTE\
-API fetch for astronaut data will not work on this live site since Open Notify API is an unsecure site. Browser will block request from https to http.
+API fetch for astronaut data will not work on this live site since Open Notify API is an unsecure site. 
 Will need to find new API source for production.
 
 === Technologies ===
