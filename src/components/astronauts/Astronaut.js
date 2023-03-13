@@ -4,22 +4,22 @@ import AuthContext from '../auth/AuthContext';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 
-
 function Astronaut() {
 
-    const   uid   = useContext(AuthContext);
+    const uid   = useContext(AuthContext);
     const [astronautData, setAstronautData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     // fetch api data and set state 
     useEffect(() => {
-        fetch("http://api.open-notify.org/astros.json")
+        fetch('/.netlify/functions/getAstronauts')
         .then(res => res.json())
-        .then(response => {
-            setAstronautData(response.people);
-            console.log(response.people)
+        .then(data => {
+            console.log(data)
+            setAstronautData(data.people);
             setIsLoading(false);
-        });
+        })
+        .catch(error => console.error(error));
     }, []);
 
 
