@@ -39,7 +39,6 @@ function Astronaut() {
                 </div>
                 <div className="d-flex align-items-center justify-content-center">
                     <p> Loading... </p>
-                    <p>If viewing on https://lodestar-app.netlify.app, browser will block data fetch because it's from an http site :(</p>
                 </div>
                 </>
             );
